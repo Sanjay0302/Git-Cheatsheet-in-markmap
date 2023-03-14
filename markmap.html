@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/style.css"
+    />
+  </head>
+
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/index.umd.min.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: Fe, mm: ur } = window,
+            Fr = new Fe.Toolbar();
+          Fr.attach(ur);
+          const Dr = Fr.render();
+          Dr.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(Dr);
+        });
+      })();
+    </script>
+    <script>
+      ((B, S, M, _) => {
+        const I = B();
+        window.mm = I.Markmap.create(
+          "svg#mindmap",
+          (S || I.deriveOptions)(_),
+          M
+        );
+      })(
+        () => window.markmap,
+        null,
+        {
+          type: "heading",
+          depth: 0,
+          payload: { lines: [1, 2] },
+          content: "Git Github and MarkDown",
+          children: [
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [3, 4] },
+              content: "Installing Git",
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [5, 6] },
+              content: "Basic CLI Commands",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [7, 8] },
+                  content: "<code>git --version</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [8, 9] },
+                      content: "Check git version",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [9, 10] },
+                  content: "<code>whoami</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [10, 11] },
+                      content: "Get the current device name",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [11, 12] },
+                  content: "<code>pwd</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [12, 13] },
+                      content: "Print current DIR",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [13, 14] },
+                  content: "<code>ls</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [14, 15] },
+                      content: "list the element of current directory",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [15, 16] },
+                  content: "<code>cd</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [16, 17] },
+                      content: "Change Directory",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [17, 18] },
+                  content: "<code>mkdir</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [18, 19] },
+                      content: "New Folder",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [19, 20] },
+                  content: "<code>cd ..</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [20, 21] },
+                      content: "Previous directory",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [21, 22] },
+                  content: "<code>touch</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [22, 23] },
+                      content: "Create a new File with extension",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [23, 24] },
+                      content: "touch filename.txt",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [24, 25] },
+                  content: "<code>echo</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [25, 26] },
+                      content: "To create a file with some text inside",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [26, 27] },
+                      content: "echo This is example Text &gt; filename.txt",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [28, 29] },
+              content: "Git Configuration",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [30, 31] },
+                  content: "<code>git config --global user.name</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [31, 32] },
+                      content: "Configure User_Name",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [32, 33] },
+                      content:
+                        "<code>git config --global user.name &quot;USERNAME&quot;</code>",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [33, 34] },
+                  content: "<code>git config --global user.email</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [34, 35] },
+                      content: "Configure User_Email",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [35, 36] },
+                      content:
+                        "<code>git config --global user.email &quot;EMAILADDRESS&quot;</code>",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [36, 37] },
+                  content: "<code>git config --list</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [37, 38] },
+                      content: "To check all configuration in the device",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [39, 40] },
+              content: "Initialise and Use of Git Folder",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [41, 44] },
+                  content:
+                    "check the current DIR using <code>pwd</code><br>\nthen create folder using <code>mkdir</code><br>\nnavigate to new folder using <code>cd</code> command",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [44, 45] },
+                  content: "<code>git init</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [45, 46] },
+                      content: "Initialise folder as Git folder",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [46, 47] },
+                  content: "then go on adding files",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [48, 49] },
+              content: "tracked and Untracked Files",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [50, 51] },
+                  content: "Tracked Files are the files that are in stagging",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [51, 52] },
+                  content:
+                    "To check number of Untracked files use <code>git status</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [52, 53] },
+                  content: "The files displayed in red are untracked files",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [54, 55] },
+              content: "stagging a single file",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [56, 57] },
+                  content: "Use <code>git add</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [58, 59] },
+                      content: "To add file to stagging environment",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [59, 60] },
+                      content:
+                        "To add single file use <code>git add FILENAME</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [60, 61] },
+                      content:
+                        "To add all Files use <code>git add .</code> or <code>git add --all</code> or <code>git add -A</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [61, 62] },
+                      content:
+                        "for Multiple files we can also do this <code>git add FileName1 FileName2</code> and so on",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [63, 64] },
+                  content: "Use <code>git restore FileName</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [64, 65] },
+                      content: "Use this after any changes in the file",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [65, 67] },
+                      content:
+                        "And that file should not be tracked<br>\nthat means the file should not be stagged",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [67, 70] },
+                      content:
+                        "after that if we want to restore to<br>\nprevious stagged file we use this command<br>\n<code>git restore FileName</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [70, 72] },
+                      content:
+                        "To remove a file from Stagging environment<br>\n<code>git rm --cached FileName</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [73, 74] },
+              content: "Git commit",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [75, 76] },
+                  content:
+                    "converting a file from staging environment to commit is called as <code>tracking process</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [76, 77] },
+                  content:
+                    "And commits are the <code>save points</code> with <code>HASH</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [77, 78] },
+                  content:
+                    "we do this so that we can go back to the versions during errors using codes (hashes)",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [78, 79] },
+                  content:
+                    "Each commit should contain a message to describe about the message",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [79, 80] },
+                  content: "<code>git commit -m &quot;MESSAGE&quot;</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [80, 81] },
+                  content:
+                    "Then verify the commit is done or not using <code>git status</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [81, 82] },
+                  content:
+                    "to see the status messages in short we use <code>git status --short</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [82, 83] },
+                      content:
+                        "We get <code>File Name</code> with <code>Flags</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [83, 84] },
+                      content:
+                        "if it is in red color then it is untracked file",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [84, 85] },
+                      content: "<code>M</code> then the file is modified",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [85, 86] },
+                      content: "<code>D</code> for deleted files",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [86, 87] },
+                      content: "<code>A</code> for Added Files",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [88, 89] },
+              content: "stage and commit in a single command",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [90, 91] },
+                  content: "<code>git comnmit -a -m &quot;MESSAGE&quot;</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [91, 92] },
+                  content: "this method is not recommended",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [92, 94] },
+                  content:
+                    "since direct stage and commit might led to add<br>\nunwanted error files without cross checking",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [95, 96] },
+              content: "git help",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [97, 99] },
+                  content:
+                    "no need to remmember all the commands<br>\nwe have git help command for that",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [99, 100] },
+                  content: "<code>git &lt;command_method&gt; -help</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [100, 101] },
+                      content:
+                        "to get the command related to specific command method",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [101, 103] },
+                      content:
+                        "for example to get commands related to commit<br>\nwe use <code>git commit -help</code> or <code>git add -help</code>",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [103, 104] },
+                  content: "<code>git help --all</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [104, 105] },
+                      content: "this is to get all the command_methods of git",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [105, 106] },
+                      content:
+                        "select a command method to get command related to that",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [106, 107] },
+                      content: "later to exit use <code>q</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [108, 109] },
+              content: "git branch",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [110, 111] },
+                  content:
+                    "Creating a copy of main branch without affecting it",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [111, 112] },
+                  content:
+                    "we can edit in that new branch and later we can merge the changes to main branch",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [112, 113] },
+                  content: "Command : <code>git branch Branch_Name</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [113, 114] },
+                      content: "The Branch is Created that's all",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [114, 115] },
+                      content:
+                        "Later get list of all branch use <code>git branch</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [115, 116] },
+                      content:
+                        "To navigate to new branch use <code>git checkout Branch_Name</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [117, 118] },
+              content: "Changes in New Branch",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [119, 120] },
+                  content:
+                    "Navigate to Branch using <code>git checkout Branch_Name</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [120, 121] },
+                  content: "Then Create files Inn that folder",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [121, 122] },
+                  content:
+                    "Then use <code>git status</code> and check for non tracked files]",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [122, 123] },
+                  content:
+                    "Use <code>git add --all</code> to add all files to stagging area",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [123, 124] },
+                  content:
+                    "Then use <code>git commit -m &quot;MESSAGE&quot;</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [124, 125] },
+                  content:
+                    "if we try to go to master branch till changes will not be shown",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [126, 127] },
+              content: "git Merge",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [128, 129] },
+                  content:
+                    "Navigate to destination branch and then use <code>git merge SOURCE_BRANCH</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [129, 130] },
+                  content:
+                    "VERIFY THE MERGED DATA USING <code>ls</code> command",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [131, 132] },
+              content: "git conflict",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [133, 134] },
+                  content:
+                    "for example if we have master and subbranch as to branch",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [134, 135] },
+                  content:
+                    "once we merge subbranch with master using <code>git merge subbranch</code> in master branch",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [135, 136] },
+                  content:
+                    "Then we use subbranch again and added something to subbranch again",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [136, 137] },
+                  content: "So then stagged and commited",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [137, 138] },
+                  content:
+                    "then if we use <code>git merge subbranch</code> again we get error",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [138, 139] },
+                  content:
+                    "to solve this conflict we use editor to edit and fix",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [139, 140] },
+                  content: "stage and commit changes",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [141, 142] },
+              content: "delete branch",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [143, 144] },
+                  content: "use <code>git branch -d BRANCH_NAME</code>",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [145, 146] },
+              content: "Link Github Repo With Local Repo",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [147, 148] },
+                  content: "create new repo in Github Website",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [148, 149] },
+                  content: "Copy the HTTP link for setting remote repo",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [149, 150] },
+                  content:
+                    "then go to local folder and open git bash then type this commands",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [150, 151] },
+                      content:
+                        "<code>echo &quot;# hello everyone&quot; &gt;&gt; README.md</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [151, 152] },
+                      content: "<code>git init</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [152, 153] },
+                      content: "<code>git add README.md</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [153, 154] },
+                      content:
+                        "<code>git commit -m &quot;first commit&quot;</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [154, 155] },
+                      content: "<code>git branch -M master</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [155, 156] },
+                      content:
+                        "<code>git remote add origin &lt;HTTPLINK&gt;</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [156, 157] },
+                      content: "<code>git push -u origin master</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [157, 158] },
+                      content:
+                        "Or just use <code>git remote add origin &lt;HTTPLINK&gt;</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [158, 159] },
+                      content:
+                        "After linking to push all files using <code>git push --set-upstream origin BRANCH_NAME</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [160, 161] },
+              content: "Up to date with changes (Web to local)",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [162, 163] },
+                  content:
+                    "i.e what ever changes made in website should be pulled to local repo",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [163, 164] },
+                  content: "There are 2 ways to do that",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [164, 165] },
+                      content:
+                        "First method is to use <code>Fetch + Merge</code> Method",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [165, 166] },
+                      content:
+                        "Second method is to use <code>pull</code> method",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [166, 167] },
+                  content: "<code>Fetch + Merge</code> Method",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [167, 168] },
+                      content: "<code>git fetch origin</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [168, 169] },
+                      content:
+                        "then <code>git status</code> we will get the message if we have anything to be changed in the github web",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [169, 170] },
+                      content:
+                        "use <code>git log origin/master</code> to fetch the latest commit",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [170, 171] },
+                      content: "use <code>git merge origin/master</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [171, 172] },
+                      content: "verify using <code>git status</code>",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [172, 173] },
+                  content: "<code>Pull</code> Method",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [173, 174] },
+                      content: "After making changes in Github Web",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [174, 175] },
+                      content:
+                        "come to git bash and use command <code>git pull origin</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [175, 176] },
+                      content: "then the local repo is up-to-date",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [177, 178] },
+              content: "Up to date with changes (local to web)",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [179, 180] },
+                  content: "We use <code>Push</code> Coommand",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [180, 181] },
+                  content: "Make changes in local repo",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [181, 182] },
+                  content: "stage and commit",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [182, 183] },
+                      content: "<code>git add --all</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [183, 184] },
+                      content: "<code>git commit -m &quot;MESSAGE&quot;</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [184, 185] },
+                      content: "<code>git status</code>",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [185, 186] },
+                  content: "then use <code>git push origin</code>",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [187, 188] },
+              content: "To pull new branch to local folder",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [189, 190] },
+                  content: "after adding a new branch in github web",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [190, 191] },
+                  content:
+                    "come to git bash and do the pull using <code>git pull origin</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [191, 192] },
+                  content: "Now the local folder is upto date",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [192, 193] },
+                  content:
+                    "then if we check <code>git branch</code> we wont see the new branch pulled",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [193, 194] },
+                  content: "For that we use <code>git branch -a</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [194, 195] },
+                  content:
+                    "then to use that branch we use <code>git checkout BRANCH_NAME</code>",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [196, 197] },
+              content: "Create branch locally and push",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [198, 199] },
+                  content: "<code>git checkout -b BRANCH_NAME</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [199, 200] },
+                      content:
+                        "create and navigate to the branch in single command",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [200, 201] },
+                  content:
+                    "then make changes -&gt; stage -&gt; check status -&gt; commit",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [201, 202] },
+                      content: "this changes are only in new branch",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [202, 203] },
+                  content:
+                    "to push the new changes <code>git push origin BRANCH_NAME</code>",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [203, 204] },
+                  content:
+                    "then we can also move the changes from one branch to another",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [205, 206] },
+              content: "Go back to previous version",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [207, 208] },
+                  content:
+                    "First check the available commit <code>git log --oneline</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [208, 209] },
+                      content:
+                        "<code>--oneline</code> willl display the minimal info about the commits",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [209, 210] },
+                  content: "Then use <code>git reset HASH</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [210, 211] },
+                      content:
+                        "RESET command will help to go back to previous version using the hashes",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [211, 212] },
+                      content: "where every commit has diffrent hashes",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [212, 213] },
+                  content:
+                    "Then commits after the specified point will be removed",
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [214, 215] },
+              content: "Parts ignored by git",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [216, 217] },
+                  content: "<code>.gitignore</code>",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [217, 218] },
+                      content: "<code>ls</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [218, 219] },
+                      content: "<code>touch .gitignore</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [219, 220] },
+                      content:
+                        "if we try using <code>ls</code> the gitignore file will not be seen because it is a hidden file",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [220, 221] },
+                      content:
+                        "this file helps in avoiding the files in local folder from being pushed to github",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [221, 222] },
+                  content: "In this file",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [222, 223] },
+                      content: "We can add comment using <code>#</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [223, 224] },
+                      content: "to ignore file <code>*.extension</code>",
+                      children: [
+                        {
+                          type: "list_item",
+                          depth: 4,
+                          payload: { lines: [224, 225] },
+                          content:
+                            "for Example <code>*.txt</code> and <code>*.log</code>",
+                        },
+                      ],
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [225, 226] },
+                      content: "to ignore folder we use <code>DIR_NAME/</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "heading",
+              depth: 1,
+              payload: { lines: [227, 228] },
+              content: "two ways to collaborate with other <code>Dev</code>",
+              children: [
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [229, 230] },
+                  content:
+                    "we have <code>fork</code> and <code>clone</code> methods",
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [230, 231] },
+                  content: "<code>fork</code> is copy of repo",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [231, 232] },
+                      content: "we can customise name and visibilty",
+                    },
+                  ],
+                },
+                {
+                  type: "list_item",
+                  depth: 2,
+                  payload: { lines: [232, 233] },
+                  content: "Then we can do clone",
+                  children: [
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [233, 234] },
+                      content: "copy the http link",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [234, 235] },
+                      content: "open local folder",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [235, 236] },
+                      content: "use <code>git clone HTTPLINK</code>",
+                    },
+                    {
+                      type: "list_item",
+                      depth: 3,
+                      payload: { lines: [236, 237] },
+                      content:
+                        "we can get history of the project we can use <code>git log</code>",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        { colorFreezeLevel: 2, maxWidth: 300, initialExpandLevel: 1 }
+      );
+    </script>
+  </body>
+</html>
